@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://copqqegd34g04"]
+
+[ext_resource type="PackedScene" uid="uid://cglnc4o2q7pfq" path="res://background.tscn" id="1_cn1bs"]
+[ext_resource type="Script" path="res://main.gd" id="1_yv1mo"]
+[ext_resource type="PackedScene" uid="uid://csq3ptrq06jvx" path="res://hero.tscn" id="2_f247c"]
+[ext_resource type="AudioStream" uid="uid://c6kmq6a7lyyuj" path="res://assets/audio/bg_theme.ogg" id="4_hl1ij"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_yv1mo")
+
+[node name="Background" parent="." instance=ExtResource("1_cn1bs")]
+
+[node name="Hero" parent="." instance=ExtResource("2_f247c")]
+position = Vector2(275, 820)
+
+[node name="bg_theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hl1ij")
+volume_db = 2.0
+autoplay = true

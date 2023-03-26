@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://csq3ptrq06jvx"]
+
+[ext_resource type="Texture2D" uid="uid://b72307nmsh1c6" path="res://assets/images/hero.png" id="1_045t5"]
+[ext_resource type="Script" path="res://hero.gd" id="1_comaw"]
+[ext_resource type="Texture2D" uid="uid://c4aurfn126ck7" path="res://assets/images/hero-1.png" id="2_2kcf3"]
+[ext_resource type="Texture2D" uid="uid://bvc4323yubdwq" path="res://assets/images/hero-2.png" id="3_tashq"]
+[ext_resource type="AudioStream" uid="uid://cltaqbhqalubo" path="res://assets/audio/quack.ogg" id="5_sbced"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ceeg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2kcf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_045t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tashq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_045t5")
+}],
+"loop": true,
+"name": &"jog",
+"speed": 4.0
+}]
+
+[node name="Hero" type="RigidBody2D"]
+position = Vector2(0, 428)
+gravity_scale = 0.0
+script = ExtResource("1_comaw")
+
+[node name="Hero_Texture" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ceeg8")
+animation = &"jog"
+frame_progress = 0.774832
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(81, -160, 101, -160, 101, -140, 120, -140, 120, 0, 81, 0, 81, 20, 101, 20, 101, 40, 120, 40, 120, 100, 101, 100, 101, 120, 81, 120, 81, 180, 21, 180, 21, 160, -19, 160, -19, 180, -80, 180, -80, 120, -100, 120, -100, 100, -120, 100, -120, 40, -100, 40, -100, 20, -80, 20, -80, 0, -120, 0, -120, -140, -100, -140, -100, -160, -80, -160, -80, -180, 81, -180)
+
+[node name="quack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sbced")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co4h4wb24u5b5"
-path="res://.godot/imported/wave.png-60bad6041dcf3b1a411de91f5510d741.ctex"
+uid="uid://c05w25ym46vei"
+path="res://.godot/imported/death-3.png-1a1f1beaba9d65262f48149abc2ff6f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/wave.png"
-dest_files=["res://.godot/imported/wave.png-60bad6041dcf3b1a411de91f5510d741.ctex"]
+source_file="res://assets/images/death-3.png"
+dest_files=["res://.godot/imported/death-3.png-1a1f1beaba9d65262f48149abc2ff6f4.ctex"]
 
 [params]
 

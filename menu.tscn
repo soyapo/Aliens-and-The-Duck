@@ -1,0 +1,212 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxk62cqsiv0qn"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_4lfa5"]
+[ext_resource type="FontFile" uid="uid://b5edngs8ati0g" path="res://assets/fonts/ARCADECLASSIC.TTF" id="2_ra5d7"]
+[ext_resource type="Texture2D" uid="uid://bvft3iv6uotp2" path="res://assets/images/close.png" id="3_brmj5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sqkkl"]
+font = ExtResource("2_ra5d7")
+font_size = 54
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmqpu"]
+font = ExtResource("2_ra5d7")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_qt7vj"]
+line_spacing = 30.0
+font = ExtResource("2_ra5d7")
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1usn"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4lfa5")
+
+[node name="Title_Label" type="Label" parent="." groups=["handling_buttons"]]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 209.0
+offset_right = 545.0
+offset_bottom = 273.0
+text = "Aliens and The Duck"
+label_settings = SubResource("LabelSettings_sqkkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start_Button" type="Button" parent="." groups=["handling_buttons"]]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 494.0
+offset_right = 350.0
+offset_bottom = 544.0
+
+[node name="Start_Label" type="Label" parent="Start_Button"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 11.0
+offset_right = 109.0
+offset_bottom = 39.0
+text = "Start"
+label_settings = SubResource("LabelSettings_qmqpu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options_Button" type="Button" parent="." groups=["handling_buttons"]]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 554.0
+offset_right = 350.0
+offset_bottom = 604.0
+
+[node name="Options_Label" type="Label" parent="Options_Button"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 122.0
+offset_bottom = 38.0
+text = "Options"
+label_settings = SubResource("LabelSettings_qmqpu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToPlay_Button" type="Button" parent="." groups=["handling_buttons"]]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 614.0
+offset_right = 350.0
+offset_bottom = 664.0
+
+[node name="HowToPlay_Label" type="Label" parent="HowToPlay_Button"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 137.0
+offset_bottom = 38.0
+text = "How to play"
+label_settings = SubResource("LabelSettings_qmqpu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Creadits_Button" type="Button" parent="." groups=["handling_buttons"]]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 676.0
+offset_right = 350.0
+offset_bottom = 726.0
+
+[node name="Credits_Label" type="Label" parent="Creadits_Button"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 38.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_qmqpu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 75.0
+offset_right = 545.0
+offset_bottom = 825.0
+text = "
+
+Designed and developed by
+ Soroush Yadollahpour (Hichkas47)
+
+Themed on 1978 game by
+ Tomohiro Nishikado
+Called Space Invaders
+
+Asset Pack By Comp-3 Interactive
+Music By DLJ (Night Emotions)"
+label_settings = SubResource("LabelSettings_qt7vj")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Close_Button" type="Button" parent="Credits"]
+z_index = 2
+layout_mode = 0
+offset_left = 487.0
+offset_top = 8.0
+offset_right = 522.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
+icon = ExtResource("3_brmj5")
+
+[node name="HowToPlay" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 75.0
+offset_right = 545.0
+offset_bottom = 825.0
+text = "
+Use  The  Arrow  keys   to  move  the  character  horizontally,   dodging The   Aliens  in  result.
+
+After   collecting  bullets,  you  can  shoot  them  by  pressing  q.  If   hit,  you'll  get  10  extra  points.
+
+You   have  5  lives  in  
+total  for  each  round"
+label_settings = SubResource("LabelSettings_qt7vj")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Close_Button_2" type="Button" parent="HowToPlay"]
+z_index = 2
+layout_mode = 0
+offset_left = 487.0
+offset_top = 8.0
+offset_right = 522.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
+icon = ExtResource("3_brmj5")
+
+[node name="Credits3" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 75.0
+offset_right = 545.0
+offset_bottom = 825.0
+text = "
+
+Designed and developed by
+ Soroush Yadollahpour (Hichkas47)
+
+Themed on 1978 game by
+ Tomohiro Nishikado
+Called Space Invaders
+
+Asset Pack By Comp-3 Interactive
+Music By DLJ (Night Emotions)"
+label_settings = SubResource("LabelSettings_qt7vj")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Close_Button" type="Button" parent="Credits3"]
+z_index = 2
+layout_mode = 0
+offset_left = 487.0
+offset_top = 8.0
+offset_right = 522.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
+icon = ExtResource("3_brmj5")
+
+[connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HowToPlay_Button" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="Creadits_Button" to="." method="_on_creadits_button_pressed"]
+[connection signal="pressed" from="Credits/Close_Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlay/Close_Button_2" to="." method="_on_close_button_2_pressed"]
+[connection signal="pressed" from="HowToPlay/Close_Button_2" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Credits3/Close_Button" to="." method="_on_close_button_pressed"]

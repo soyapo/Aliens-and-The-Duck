@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfi1f6mjh1k2f"
-path="res://.godot/imported/SpaceInvaders_Icons.png-209d3f54340203435d0c793d0ef7e98a.ctex"
+uid="uid://ce2orruskwtnd"
+path="res://.godot/imported/death-4.png-4654c1c481491bc06aadf8340812533b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/SpaceInvaders_Icons.png"
-dest_files=["res://.godot/imported/SpaceInvaders_Icons.png-209d3f54340203435d0c793d0ef7e98a.ctex"]
+source_file="res://assets/images/death-4.png"
+dest_files=["res://.godot/imported/death-4.png-4654c1c481491bc06aadf8340812533b.ctex"]
 
 [params]
 

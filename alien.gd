@@ -1,9 +1,7 @@
 extends RigidBody2D
 
-func get_size(s):
-	var rect = s.get_global_rect()
-	var size = rect.size
-	print(size)
+var min_speed = 500
+var max_speed = 700
 
-func _process(delta):
-	get_size($alien)
+func _on_in_screen_screen_exited():
+	queue_free()

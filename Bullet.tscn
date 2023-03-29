@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bttnr3ru47n3j"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_wyb1j"]
+[ext_resource type="Texture2D" uid="uid://lwms51exesug" path="res://assets/images/Bullet.png" id="2_o8b5p"]
+
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 8
+gravity_scale = -5.0
+max_contacts_reported = 2000
+contact_monitor = true
+script = ExtResource("1_wyb1j")
+
+[node name="Bullet_Texture" type="Sprite2D" parent="."]
+texture = ExtResource("2_o8b5p")
+
+[node name="Bullet_Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(3, -15, 4, -15, 4, -14, 5, -14, 5, -12, 6, -12, 6, -10, 7, -10, 7, -8, 8, -8, 8, 16, -8, 16, -8, -8, -7, -8, -7, -10, -6, -10, -6, -12, -5, -12, -5, -14, -4, -14, -4, -15, -3, -15, -3, -16, 3, -16)
+
+[node name="in_screen" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="in_screen" to="." method="_on_in_screen_screen_exited"]

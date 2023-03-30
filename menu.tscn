@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxk62cqsiv0qn"]
+[gd_scene load_steps=10 format=3 uid="uid://bxk62cqsiv0qn"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_4lfa5"]
 [ext_resource type="FontFile" uid="uid://b5edngs8ati0g" path="res://assets/fonts/ARCADECLASSIC.TTF" id="2_ra5d7"]
@@ -12,12 +12,20 @@ font_size = 54
 font = ExtResource("2_ra5d7")
 font_size = 24
 
+[sub_resource type="LabelSettings" id="LabelSettings_no2hq"]
+font = ExtResource("2_ra5d7")
+font_size = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1usn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nm4a6"]
+font = ExtResource("2_ra5d7")
+font_size = 24
+
 [sub_resource type="LabelSettings" id="LabelSettings_qt7vj"]
 line_spacing = 30.0
 font = ExtResource("2_ra5d7")
 font_size = 30
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1usn"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -47,11 +55,12 @@ offset_right = 350.0
 offset_bottom = 544.0
 
 [node name="Start_Label" type="Label" parent="Start_Button"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 11.0
-offset_right = 109.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Start"
 label_settings = SubResource("LabelSettings_qmqpu")
 horizontal_alignment = 1
@@ -65,11 +74,12 @@ offset_right = 350.0
 offset_bottom = 604.0
 
 [node name="Options_Label" type="Label" parent="Options_Button"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 10.0
-offset_right = 122.0
-offset_bottom = 38.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Options"
 label_settings = SubResource("LabelSettings_qmqpu")
 horizontal_alignment = 1
@@ -83,33 +93,181 @@ offset_right = 350.0
 offset_bottom = 664.0
 
 [node name="HowToPlay_Label" type="Label" parent="HowToPlay_Button"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 10.0
-offset_right = 137.0
-offset_bottom = 38.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "How to play"
 label_settings = SubResource("LabelSettings_qmqpu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Creadits_Button" type="Button" parent="." groups=["handling_buttons"]]
+[node name="Credits_Button" type="Button" parent="." groups=["handling_buttons"]]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 676.0
 offset_right = 350.0
 offset_bottom = 726.0
 
-[node name="Credits_Label" type="Label" parent="Creadits_Button"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 10.0
-offset_right = 119.0
-offset_bottom = 38.0
+[node name="Credits_Label" type="Label" parent="Credits_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Credits"
 label_settings = SubResource("LabelSettings_qmqpu")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Start" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 75.0
+offset_right = 545.0
+offset_bottom = 825.0
+
+[node name="Easy_Button" type="Button" parent="Start"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 300.0
+offset_right = 395.0
+offset_bottom = 370.0
+
+[node name="Easy_Text" type="Label" parent="Start/Easy_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Easy"
+label_settings = SubResource("LabelSettings_no2hq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hard_Button" type="Button" parent="Start"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 380.0
+offset_right = 395.0
+offset_bottom = 450.0
+
+[node name="Hard_Text" type="Label" parent="Start/Hard_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hard"
+label_settings = SubResource("LabelSettings_no2hq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 75.0
+offset_right = 545.0
+offset_bottom = 825.0
+
+[node name="Close_Button_3" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 8.0
+offset_right = 522.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
+icon = ExtResource("3_brmj5")
+
+[node name="Sound_Button" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 300.0
+offset_right = 395.0
+offset_bottom = 370.0
+
+[node name="Sound_Text" type="Label" parent="Options/Sound_Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 181.0
+offset_bottom = 71.0
+text = "Background Music:"
+label_settings = SubResource("LabelSettings_no2hq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound_Value" type="Label" parent="Options/Sound_Button"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 1.0
+offset_right = 254.0
+offset_bottom = 76.0
+text = "on"
+label_settings = SubResource("LabelSettings_nm4a6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quack_Button" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 380.0
+offset_right = 395.0
+offset_bottom = 450.0
+
+[node name="Quack_Text" type="Label" parent="Options/Quack_Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 181.0
+offset_bottom = 71.0
+text = "Character Sound:"
+label_settings = SubResource("LabelSettings_no2hq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quack_Value" type="Label" parent="Options/Quack_Button"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 1.0
+offset_right = 254.0
+offset_bottom = 76.0
+text = "on"
+label_settings = SubResource("LabelSettings_nm4a6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToPlay" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 36.0
+offset_right = 545.0
+offset_bottom = 838.0
+text = "
+Use  The  A - D   keys   to  move  the  character  horizontally,   dodging The   Aliens  in  result.
+
+After   recieving   bullets (randomly between   4-8   seconds), you   can   shoot them   by   pressing   enter. 
+
+You   have  5  lives  in  
+total  for  each  round"
+label_settings = SubResource("LabelSettings_qt7vj")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Close_Button_2" type="Button" parent="HowToPlay"]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 8.0
+offset_right = 522.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
+icon = ExtResource("3_brmj5")
 
 [node name="Credits" type="Label" parent="."]
 visible = false
@@ -134,79 +292,22 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Close_Button" type="Button" parent="Credits"]
-z_index = 2
 layout_mode = 0
 offset_left = 487.0
 offset_top = 8.0
 offset_right = 522.0
-offset_bottom = 45.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
-icon = ExtResource("3_brmj5")
-
-[node name="HowToPlay" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 5.0
-offset_top = 75.0
-offset_right = 545.0
-offset_bottom = 825.0
-text = "
-Use  The  Arrow  keys   to  move  the  character  horizontally,   dodging The   Aliens  in  result.
-
-After   collecting  bullets,  you  can  shoot  them  by  pressing  q.  If   hit,  you'll  get  10  extra  points.
-
-You   have  5  lives  in  
-total  for  each  round"
-label_settings = SubResource("LabelSettings_qt7vj")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Close_Button_2" type="Button" parent="HowToPlay"]
-z_index = 2
-layout_mode = 0
-offset_left = 487.0
-offset_top = 8.0
-offset_right = 522.0
-offset_bottom = 45.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
-icon = ExtResource("3_brmj5")
-
-[node name="Credits3" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 5.0
-offset_top = 75.0
-offset_right = 545.0
-offset_bottom = 825.0
-text = "
-
-Designed and developed by
- Soroush Yadollahpour (Hichkas47)
-
-Themed on 1978 game by
- Tomohiro Nishikado
-Called Space Invaders
-
-Asset Pack By Comp-3 Interactive
-Music By DLJ (Night Emotions)"
-label_settings = SubResource("LabelSettings_qt7vj")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Close_Button" type="Button" parent="Credits3"]
-z_index = 2
-layout_mode = 0
-offset_left = 487.0
-offset_top = 8.0
-offset_right = 522.0
-offset_bottom = 45.0
+offset_bottom = 43.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f1usn")
 icon = ExtResource("3_brmj5")
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options_Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="HowToPlay_Button" to="." method="_on_how_to_play_button_pressed"]
-[connection signal="pressed" from="Creadits_Button" to="." method="_on_creadits_button_pressed"]
-[connection signal="pressed" from="Credits/Close_Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Start/Easy_Button" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="Start/Hard_Button" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="Options/Close_Button_3" to="." method="_on_close_button_3_pressed"]
+[connection signal="pressed" from="Options/Sound_Button" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="Options/Quack_Button" to="." method="_on_quack_button_pressed"]
 [connection signal="pressed" from="HowToPlay/Close_Button_2" to="." method="_on_close_button_2_pressed"]
-[connection signal="pressed" from="HowToPlay/Close_Button_2" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="Credits3/Close_Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Credits/Close_Button" to="." method="_on_close_button_pressed"]

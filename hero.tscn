@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://chm1sfgk4mw6t"]
+[gd_scene load_steps=14 format=3 uid="uid://chm1sfgk4mw6t"]
 
 [ext_resource type="Script" path="res://Hero.gd" id="1_y5tnp"]
 [ext_resource type="Texture2D" uid="uid://c4aurfn126ck7" path="res://assets/images/Hero-1.png" id="2_aj1uf"]
@@ -58,6 +58,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h06nf"]
+size = Vector2(240, 360)
+
 [node name="Hero" type="Area2D"]
 z_index = 8
 position = Vector2(0, 428)
@@ -71,9 +74,9 @@ sprite_frames = SubResource("SpriteFrames_ceeg8")
 animation = &"death"
 frame_progress = 0.555635
 
-[node name="Hero_Collision" type="CollisionPolygon2D" parent="."]
+[node name="Hero_Collision" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)
-polygon = PackedVector2Array(81, -160, 101, -160, 101, -140, 120, -140, 120, 0, 81, 0, 81, 20, 101, 20, 101, 40, 120, 40, 120, 100, 101, 100, 101, 120, 81, 120, 81, 180, 21, 180, 21, 160, -19, 160, -19, 180, -80, 180, -80, 120, -100, 120, -100, 100, -120, 100, -120, 40, -100, 40, -100, 20, -80, 20, -80, 0, -120, 0, -120, -140, -100, -140, -100, -160, -80, -160, -80, -180, 81, -180)
+shape = SubResource("RectangleShape2D_h06nf")
 
 [node name="Quack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_sbced")

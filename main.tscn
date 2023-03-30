@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dxvjxiakqmp3a"]
+[gd_scene load_steps=21 format=3 uid="uid://dxvjxiakqmp3a"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_epdvp"]
 [ext_resource type="PackedScene" uid="uid://cglnc4o2q7pfq" path="res://background.tscn" id="2_evfp6"]
 [ext_resource type="PackedScene" uid="uid://chm1sfgk4mw6t" path="res://Hero.tscn" id="3_dis3x"]
 [ext_resource type="PackedScene" uid="uid://bxk62cqsiv0qn" path="res://menu.tscn" id="3_t2jwi"]
+[ext_resource type="PackedScene" uid="uid://b5qlyefkx0vmv" path="res://death.tscn" id="4_j4kui"]
 [ext_resource type="AudioStream" uid="uid://c6kmq6a7lyyuj" path="res://assets/audio/bg_theme.ogg" id="4_k0k4l"]
 [ext_resource type="PackedScene" uid="uid://bttnr3ru47n3j" path="res://Bullet.tscn" id="5_lv6ha"]
 [ext_resource type="PackedScene" uid="uid://bb4yfgx1c4pk" path="res://Alien.tscn" id="5_phqem"]
@@ -73,13 +74,16 @@ font_size = 33
 script = ExtResource("1_epdvp")
 
 [node name="Background" parent="." instance=ExtResource("2_evfp6")]
-z_index = -3
+z_as_relative = false
 
 [node name="Menu" parent="." instance=ExtResource("3_t2jwi")]
 offset_left = 2.0
 offset_top = -1.0
 offset_right = 2.0
 offset_bottom = -1.0
+
+[node name="Death" parent="." instance=ExtResource("4_j4kui")]
+visible = false
 
 [node name="Hero" parent="." groups=["not_in_menu"] instance=ExtResource("3_dis3x")]
 visible = false
@@ -90,8 +94,13 @@ visible = false
 
 [node name="Bullet" parent="." instance=ExtResource("5_lv6ha")]
 visible = false
+position = Vector2(0, 126)
+input_pickable = true
 
 [node name="AlienTimer" type="Timer" parent="."]
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 4.0
 
 [node name="HealthRate" type="AnimatedSprite2D" parent="." groups=["not_in_menu"]]
 visible = false
@@ -112,26 +121,31 @@ vertical_alignment = 1
 
 [node name="BulletCount" type="Label" parent="." groups=["not_in_menu"]]
 visible = false
-z_index = -1
-offset_left = 462.0
-offset_top = 91.0
-offset_right = 507.0
-offset_bottom = 128.0
+offset_left = 454.0
+offset_top = 86.0
+offset_right = 499.0
+offset_bottom = 123.0
 text = "0"
 label_settings = SubResource("LabelSettings_ssify")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BulletIcon" type="Sprite2D" parent="BulletCount"]
-position = Vector2(57, 18)
+position = Vector2(67, 16)
 texture = ExtResource("8_p3j53")
 
 [node name="bg_theme" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("4_k0k4l")
 volume_db = 2.0
 autoplay = true
 
 [connection signal="death" from="." to="." method="_on_death"]
-[connection signal="start" from="Menu" to="." method="_on_menu_start"]
+[connection signal="easy" from="Menu" to="." method="_on_menu_easy"]
+[connection signal="hard" from="Menu" to="." method="_on_menu_hard"]
+[connection signal="quack_change" from="Menu" to="." method="_on_menu_quack_change"]
+[connection signal="sound_change" from="Menu" to="." method="_on_menu_sound_change"]
+[connection signal="start_over" from="Death" to="." method="_on_death_start_over"]
 [connection signal="hit" from="Hero" to="." method="_on_hero_hit"]
 [connection signal="timeout" from="AlienTimer" to="." method="_on_alien_timer_timeout"]
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

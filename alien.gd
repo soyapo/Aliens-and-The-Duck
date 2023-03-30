@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-var min_speed = 500
-var max_speed = 700
-
+# age az safhe raft biroon naboodesh mikonim resource hamoon hadar nare
 func _on_in_screen_screen_exited():
 	queue_free()

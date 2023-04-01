@@ -55,8 +55,8 @@ func start(): # shoroo bazi
 	$AlienTimer.start() # age time out she doshman o goloole generate mikonim
 	$BulletTimer.start() # age timeout she ye time random beyn 4 taa 8 saani sabr mikonim o ye goloole midim
 	$HealthRate.frame = 5 # por neshoon bede health bar ro
-	$BulletCount.text = '0'
-	$Hero.position.x = 275
+	$BulletCount.text = '0' # meghdaresh reset she
+	$Hero.position.x = 275 # reset she position esh
 	$Hero/Hero_Texture.play("jog") # animation raah raftan ro neshoon bede
 	get_tree().call_group("not_in_menu", "show") # health bar - character - emtiaz - ...
 	
